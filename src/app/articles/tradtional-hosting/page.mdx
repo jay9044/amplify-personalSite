@@ -1,0 +1,70 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import servelessArchitecture from './Serverless_Architecture.jpg'
+import vpcSetup from './VPC_SETUP.jpg'
+import albSetup from './ALB_setup.jpg'
+
+export const article = {
+  author: 'Jamal Westfield',
+  date: '2023-10-16',
+  title: 'My tradtional approach of hosting this site ',
+  description:
+    'Many companies utilize a number of traditional technologies within AWS to deliver applications, most of which are less managed than the serverless technologies. These include Elastic Cloud Compute (EC2), which provides virtual machines in AWS, and Virtual Private Cloud (VPC), which provides virtual networking constructs in AWS.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Many companies utilize a number of traditional technologies within AWS to deliver applications, most of which are less managed than the serverless technologies. These include Elastic Cloud Compute (EC2), which provides virtual machines in AWS, and Virtual Private Cloud (VPC), which provides virtual networking constructs in AWS.
+<div>
+  <Image src={servelessArchitecture} alt="" />
+  <p style={{ textAlign: 'center', marginTop: '10px' }}>Typical serveless Architecture</p>
+</div>
+
+Using serverless techonolgiges allows for the devlopers to focus on the application and delivery without having to be concered with operational tasks such as network etc. I mean, deivering the application to the cloud is the most important thing!
+
+However, my experience as a Junior Devops Engineers exposed me to notion that a complete serveless appliation is not always ideal nor possible. Hence, the reasoning behind hosting this site a combination serveless and tradtional technologies. 
+
+## Setting up the Virtual Private Cloud (VPC)
+
+I wont bore you with all the details but instead I will outline my objective the steps taken.
+
+### Objective: Architect a Higlhy Avaliable VPC
+
+1. Create the VPC and define the IP address range
+2. Configure PUBLIC and PRIVATE subnets (Very Important)
+3. Allow Internet bound traffic via private subnets using NAT Gateways
+4. Configure Route Tables
+5. Configure Firewalls/Security Groups (SG)
+<div>
+  <Image src={vpcSetup} alt="" />
+  <p style={{ textAlign: 'center', marginTop: '10px' }}>VPC Architecture</p>
+</div>
+
+
+## Secure two-teir Architecture
+
+### Objective: High Avalibility & component traffic distribution
+
+1. Create an Application Load Balancer
+2. Create a Launch Template with a user_data script that installs Apache
+3. Create an Auto Scaling group
+4. Update Security Groups
+5. Test the Web Server
+6. Test High Availability
+7. Connect to an EC2 Instance in a Private Subnet using EC2 Instance Connect Endpoint
+8. Testing Automatic Scaling Under Load
+<div>
+  <Image src={albSetup} alt="" />
+  <p style={{ textAlign: 'center', marginTop: '10px' }}>Application Load Balancer</p>
+</div>
+
+### Still room for improvement - In Progress
+
+1. Utilise IAC, specially Terraform
+2. CI/CD, specially Github Actions
+3. Monioting 
