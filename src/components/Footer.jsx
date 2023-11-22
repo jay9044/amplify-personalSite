@@ -24,6 +24,7 @@ export function Footer() {
                 <NavLink href="/about">About Me</NavLink>
                 <NavLink href="/articles">Articles</NavLink>
                 <NavLink href="/certs">Certificates</NavLink>
+                <NavLink href="/projects">Projects</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 &copy; {new Date().getFullYear()} Jamal Westfield. All rights
