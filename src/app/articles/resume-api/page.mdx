@@ -9,7 +9,7 @@ export const article = {
   date: '2023-10-17',
   title: 'My cloud resume API ',
   description:
-    'A serverless API using AWS Lambda, DynamoDB and Terraform, integrated with GitHub Actions',
+    'A serverless API using AWS Lambda, DynamoDB',
 }
 
 export const metadata = {
@@ -27,12 +27,7 @@ export default (props) => <ArticleLayout article={article} {...props} />
                          |
                          V
                   [DynamoDB Table]
-                         |
-                         V
-                 [Terraform Script]
-                         |
-                         V
-              [GitHub Actions Workflow]
+                         
 ```
 <div>
   <p style={{ textAlign: 'center', marginTop: '10px' }}>AWS Textual Representation</p>
@@ -50,6 +45,6 @@ export default (props) => <ArticleLayout article={article} {...props} />
 
 5. **DynamoDB Table**: The actual DynamoDB table where resume data is stored.
 
-6. **Terraform Script**: Defines the infrastructure as code (IaC) for provisioning the DynamoDB table and Lambda function.
 
-7. **GitHub Actions Workflow**: A workflow that is triggered by events in the GitHub repository. It runs Terraform to provision and update the infrastructure when changes occur.
+
+You can take a look by clicking the Curl My Resume button on the homepage!

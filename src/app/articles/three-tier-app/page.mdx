@@ -1,0 +1,39 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import three_tier_image from './three_tier.PNG'
+
+export const article = {
+  author: 'Jamal Westfield',
+  date: '2023-11-16',
+  title: 'High availability and scalability three tier web app ',
+  description:
+    'Hands on with VPC, EC2, S3, IAM, RDS, GLUE + Terraform provisioning',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+## Three teir Architecture
+<div>
+  <Image src={three_tier_image} alt="" />
+  <p style={{ textAlign: 'center', marginTop: '10px' }}>Architecture Overview</p>
+</div>
+
+
+## Hands On Configuration
+Specifically, I will walk you through the following services setup.
+
+1. Network – Amazon VPC
+2. Compute – Amazon EC2
+3. Database – Amazon Aurora
+4. Storage – Amazon S3
+
+## Considerations
+More to come..
+
+## Terraform Provisioning
+More to come..
