@@ -7,16 +7,12 @@ const certs = [
     link: { href: 'https://kodekloud.com/courses/linux-foundation-certified-system-administrator-lfcs/', label: 'https://kodekloud.com' }
   },
   {
-    name: 'AWS Certified Developer - Associate',
+    name: 'AWS Solutions Architect - Associate',
     link: { href: 'https://learn.cantrill.io/p/aws-certified-developer-associate', label: 'learn.cantrill.io' }
   },
   {
-    name: 'AWS Certified SysOps Administrator - Associate',
+    name: 'Terraform - Associate',
     link: { href: 'https://learn.cantrill.io/p/aws-certified-sysops-administrator-associate', label: 'learn.cantrill.io' }
-  },
-  {
-    name: 'AWS Certified DevOps Engineer - Professional',
-    link: { href: 'https://learn.cantrill.io/p/aws-certified-devops-engineer-professional', label: 'learn.cantrill.io' }
   }
 ]
 
@@ -39,7 +35,7 @@ export const metadata = {
 export default function Certs() {
   return (
     <SimpleLayout
-      title="Certifications In Progress: In Chronological Order"
+      title="Certifications To Achieve in 2024"
       intro=" I have come to recognize the immense value of both certifications and practical, hands-on experience. While certifications serve as concrete validations of specialized knowledge and skills, hands-on experience offers a dynamic understanding of real-world challenges and practical application."
     >
       <ul
@@ -53,8 +49,6 @@ export default function Certs() {
             </h2>
             <Card.Description>{cert.description}</Card.Description>
             <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-              <LinkIcon className="h-6 w-6 flex-none" />
-              <span className="ml-2">{cert.link.label}</span>
             </p>
           </Card>
         ))}
